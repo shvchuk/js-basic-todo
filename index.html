@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>JS very basic ToDos</title>
+    <script src="https://unpkg.com/vue"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.js"-->
+            <!--integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="-->
+            <!--crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.core.min.js"></script>
 </head>
 <body>
-    <input type="text">
-    <button>Add Todo</button>
+    <div id="app">
+        <input type="text" v-model="userInput">
+        <button v-on:click="addTodo">Add Todo</button>
+        <ul>
+            <li
+                    v-for="todo in todos"
+                    v-on:click="removeTodo(todo)">{{ todo.value }}</li>
+        </ul>
+    </div>
 
-    <ul></ul>
-    <script src="app.js"></script>
+
+
+    <!--<script src="app.js"></script>-->
+    <!--<script src="appimprovedwithjq.js"></script>-->
+    <script src="appwithvuejs.js"></script>
 </body>
 </html>
